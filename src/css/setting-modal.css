@@ -1,0 +1,143 @@
+.modal {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+}
+
+.setting-form {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  border-radius: 10px;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+}
+
+html[data-theme="dark"] .setting-form {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.setting-form fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 1.5rem;
+  padding: 0;
+  padding-bottom: 0.5rem;
+  width: 80%;
+}
+
+.setting-form fieldset > label {
+  align-self: start;
+}
+
+.toggle-button {
+  --button-size: 25px;
+  --active-color: var(--secondary-color);
+  --inactive-color: #ddd;
+  --button-shadow: 0 0 16px var(--primary-color);
+  --button-shadow-dark: 0 0 16px var(--secondary-color);
+}
+
+.toggle-button input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-button label {
+  border-radius: calc(var(--button-size) * 2);
+  box-shadow: var(--button-shadow);
+  box-sizing: border-box;
+  background: var(--inactive-color);
+  cursor: pointer;
+  display: block;
+  opacity: 0.5;
+  position: relative;
+  transition: 0.3s ease;
+  height: var(--button-size);
+  width: calc(var(--button-size) * 2);
+}
+
+html[data-theme="dark"] .toggle-button label,
+html[data-theme="dark"] .toggle-button label::before {
+  box-shadow: var(--button-shadow-dark);
+}
+
+.toggle-button input[type="checkbox"]:checked + label {
+  background: var(--active-color);
+  opacity: 1;
+}
+
+.toggle-button input[type="checkbox"]:checked + label::before {
+  left: var(--button-size);
+  opacity: 1;
+}
+
+.toggle-button label::before {
+  background: white;
+  border-radius: 50%;
+  box-shadow: var(--button-shadow);
+  box-sizing: border-box;
+  content: "";
+  opacity: 0.5;
+  position: absolute;
+  left: calc(var(--button-size) * 0.08);
+  top: calc(var(--button-size) * 0.08);
+  transition: 0.3s ease;
+  height: calc(var(--button-size) * 0.8);
+  width: calc(var(--button-size) * 0.8);
+}
+
+.setting-form input[type="number"] {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  border-color: var(--primary-color);
+  box-shadow: var(--defaurt-shadow-light);
+  font-size: 1.5rem;
+  text-align: right;
+  margin-right: 0.5rem;
+  outline: none;
+  width: 3rem;
+}
+
+html[data-theme="dark"] .setting-form input[type="number"] {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  border-color: var(--secondary-color);
+  box-shadow: var(--defaurt-shadow-dark);
+}
+
+.modal-close-button {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  box-shadow: var(--defaurt-shadow-light);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  outline: none;
+  padding: 0.5rem;
+  user-select: none;
+}
+
+html[data-theme="dark"] .modal-close-button {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  box-shadow: var(--defaurt-shadow-dark);
+}
+
+.modal-close-button:hover {
+  opacity: 0.5;
+}

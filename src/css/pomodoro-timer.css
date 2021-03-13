@@ -1,0 +1,59 @@
+.pomodoro-timer {
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  height: 20rem;
+  width: 20rem;
+}
+
+.pomodoro-status {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.display {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  box-shadow: var(--defaurt-shadow-light);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  height: 70%;
+  width: 70%;
+}
+
+.display:hover {
+  opacity: 0.5;
+}
+
+.player {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.player-button {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 50%;
+  box-shadow: var(--defaurt-shadow-light);
+  cursor: pointer;
+  outline: none;
+  font-size: 1.5rem;
+  height: 3rem;
+  width: 3rem;
+  user-select: none;
+}
+
+.player-button:hover {
+  opacity: 0.5;
+}
